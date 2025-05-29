@@ -1,35 +1,35 @@
 package com.br.todolist.model;
 
-import com.br.todolist.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "tbl_users")
+@Table(name = "tbl_tasks")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserModel {
+public class TaskModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 180)
-    private String name;
-
-    @Column(unique = true, nullable = false, length = 180)
-    private String email;
+    @Column(nullable = false)
+    private String description;
 
     @Column(nullable = false)
-    private String password;
+    private LocalDate dueDate;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private UserRole role;
+    private Boolean completed;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private UserModel user;
 
 }
