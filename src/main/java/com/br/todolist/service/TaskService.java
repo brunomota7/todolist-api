@@ -53,13 +53,17 @@ public class TaskService {
     }
 
     public List<TaskResponse> getAllTaskCompleted() {
-        return taskRepository.findByCompletedTrue().stream()
+        UserModel user = authService.getAuthenticatedUser();
+        return taskRepository.findByUserAndCompletedTrue(user)
+                .stream()
                 .map(TaskMapper::toDTO)
                 .toList();
     }
 
     public List<TaskResponse> getAllTaskNoCompleted() {
-        return taskRepository.findByCompletedFalse().stream()
+        UserModel user = authService.getAuthenticatedUser();
+        return taskRepository.findByUserAndCompletedFalse(user)
+                .stream()
                 .map(TaskMapper::toDTO)
                 .toList();
     }
