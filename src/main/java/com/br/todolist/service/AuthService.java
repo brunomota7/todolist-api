@@ -47,7 +47,7 @@ public class AuthService {
             throw new RuntimeException("Senha inválida!");
         }
 
-        String token = jwtUtil.generateToke(user);
+        String token = jwtUtil.generateToken(user);
 
         return ResponseEntity.status(200)
                 .body(new LoginResponse(token, user.getName(), user.getEmail(), user.getRole()));

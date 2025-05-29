@@ -34,6 +34,7 @@ public class TaskService {
                 .description(dto.getDescription())
                 .dueDate(dto.getDueDate())
                 .completed(dto.getCompleted())
+                .user(user)
                 .build();
 
         taskRepository.save(task);
