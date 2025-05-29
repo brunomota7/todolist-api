@@ -1,5 +1,6 @@
 package com.br.todolist.repositorys;
 
+import com.br.todolist.dto.response.UserResponse;
 import com.br.todolist.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
