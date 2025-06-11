@@ -1,4 +1,4 @@
-package com.br.todolist.config;
+package com.br.todolist.util;
 
 import com.br.todolist.model.UserDetailsModel;
 import com.br.todolist.model.UserModel;

@@ -1,5 +1,6 @@
 package com.br.todolist.config;
 
+import com.br.todolist.util.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

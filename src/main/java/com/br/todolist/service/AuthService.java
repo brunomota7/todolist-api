@@ -1,6 +1,6 @@
 package com.br.todolist.service;
 
-import com.br.todolist.config.JwtUtil;
+import com.br.todolist.util.JwtUtil;
 import com.br.todolist.dto.request.LoginRequest;
 import com.br.todolist.dto.request.RegisterRequest;
 import com.br.todolist.dto.response.LoginResponse;
